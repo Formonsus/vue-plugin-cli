@@ -3,7 +3,7 @@
   "description": "Cli tool to create Vue plugins with Rollup",
   "author": "Aleksandar Milicevic",
   "license": "MIT",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "bin": {
     "plugin-init": "./plugin-init.js"
   },
