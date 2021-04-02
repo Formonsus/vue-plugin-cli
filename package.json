@@ -28,7 +28,11 @@
     "version:major": "changelog -m && git add CHANGELOG.md && git commit -m 'chore: update CHANGELOG.md' && yarn version --major && git push origin && git push origin --tags",
     "prepare": "husky install"
   },
-  "dependencies": {},
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "prompts": "^2.4.1",
+    "update-check": "^1.5.4"
+  },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
