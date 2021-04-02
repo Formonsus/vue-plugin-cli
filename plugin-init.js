@@ -13,7 +13,8 @@ const pkg = require("./package");
 const result = {
   version: "",
   pluginName: "",
-  language: ""
+  language: "",
+  update: false
 }
 
 // Exit the process.
@@ -23,10 +24,17 @@ function onCancel() {
 }
 
 async function checkForCliToolUpdate() {
+  let update = null;
   try {
-    console.log("Checking for update....");
+    update = await updateCheck(pkg);
   } catch(err) {
-    console.error("Failed to update vue-plugin-cli package");
+    const errorMessage = `${pkg.name} failed to check for self update -->`;
+    console.error(`${chalk.black.bgRed(errorMessage)}${err}`);
+    update = null;
+  }
+
+  if (update) {
+    result.update = update;
   }
 }
 
