@@ -123,7 +123,7 @@ function createPluginProject(options) {
       srcPath = fileAction;
       destPath = fileAction;
     } else {
-      [[srcPath, destPath]] = Object.entries(entry);
+      [[srcPath, destPath]] = Object.entries(fileAction);
     }
 
     srcPath = path.join.apply(null, [
