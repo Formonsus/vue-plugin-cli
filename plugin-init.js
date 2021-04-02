@@ -31,7 +31,7 @@ async function checkForCliToolUpdate() {
   let update = null;
   try {
     update = await updateCheck(pkg);
-  } catch(err) {
+  } catch (err) {
     const errorMessage = `${pkg.name} failed to check for self update -->`;
     console.error(`${chalk.black.bgRed(errorMessage)}${err}`);
     update = null;
@@ -137,8 +137,8 @@ function createPluginProject(options) {
       { "src/entry.esm.ts": `src/entry.esm.${options.language}` },
       { "src/entry.ts": `src/entry.${options.language}` },
       { "dev/serve.ts": `dev/serve.${options.language}` },
-      { "dev/router.ts": `dev/router.${options.language}`},
-      { "dev/store.ts": `dev/store.${options.language}`},
+      { "dev/router.ts": `dev/router.${options.language}` },
+      { "dev/store.ts": `dev/store.${options.language}` },
       "dev/serve.vue",
       ".browserslistrc",
       "babel.config.js",

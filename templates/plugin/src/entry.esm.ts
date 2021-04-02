@@ -7,7 +7,7 @@ import _Vue, { PluginObject, VueConstructor } from 'vue';
 <% if (ts) { -%>
   const install = (<% if (version === 3) { %>app: App, options: any<% } else { %>Vue: typeof _Vue, options: any<% } %>) => {
 <% } else { -%>
-  const install = (<% if (version === 3) { %>app, options: any<% } else { %>Vue, options: any<% } %>) => {
+  const install = (<% if (version === 3) { %>app, options<% } else { %>Vue, options<% } %>) => {
 <% } -%>
     const topLevelPluginRoute = {
       path: options.routePrefix,
