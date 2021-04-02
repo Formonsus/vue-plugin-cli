@@ -22,7 +22,7 @@ function onCancel() {
   process.exit();
 }
 
-async function checkForUpdates() {
+async function checkForCliToolUpdate() {
   try {
     console.log("Checking for update....");
   } catch(err) {
@@ -76,7 +76,7 @@ async function getLanguage() {
   result.language = response.language;
 }
 
-checkForUpdates()
+checkForCliToolUpdate()
   .then(getVersion)
   .then(getName)
   .then(getLanguage)
