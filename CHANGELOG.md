@@ -1,3 +1,20 @@
+### 0.3.0 (2021-04-02)
+
+##### Chores
+
+*  update scripts inside package.json ([390bcb77](https://github.com/Formonsus/vue-plugin-cli/commit/390bcb77e7c1de0783bf12520ab5505484e084a6))
+
+##### New Features
+
+*  first implementation of generator ([94d2223d](https://github.com/Formonsus/vue-plugin-cli/commit/94d2223d318e3dfaa37b6fa465aa03f5dcd0006a))
+
+##### Bug Fixes
+
+*  wrong ejs tags ([71a20730](https://github.com/Formonsus/vue-plugin-cli/commit/71a20730c784768bfab82d052b16979d15a732f6))
+*  incorrect character in path ([70f2fdb7](https://github.com/Formonsus/vue-plugin-cli/commit/70f2fdb702d595781584d6caa9a54b98ede7729d))
+*  entry => fileAction ([dc1a313a](https://github.com/Formonsus/vue-plugin-cli/commit/dc1a313af10c8e2770c31948abe77942cd3de098))
+*  missing require, and wrong variable name ([28530942](https://github.com/Formonsus/vue-plugin-cli/commit/28530942b848ae2964c7cc520c3ea3bae7d71341))
+
 ### 0.2.0 (2021-04-02)
 
 ##### Chores
