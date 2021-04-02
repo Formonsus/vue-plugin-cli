@@ -22,16 +22,14 @@
   ],
   "scripts": {
     "lint": "eslint ./**/*.js ./**/.*.js",
-    "version:patch": "yarn version --patch",
-    "version:minor": "yarn version --minor",
-    "version:major": "yarn version --major",
-    "prerelease:patch": "yarn version --prepatch",
-    "prerelease:minor": "yarn version --preminor",
-    "prerelease:major": "yarn version --premajor"
+    "version:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'chore: update CHANGELOG.md' && yarn version --patch && git push origin && git push origin --tags",
+    "version:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'chore: update CHANGELOG.md' && yarn version --minor && git push origin && git push origin --tags",
+    "version:major": "changelog -m && git add CHANGELOG.md && git commit -m 'chore: update CHANGELOG.md' && yarn version --major && git push origin && git push origin --tags"
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.23.0"
+    "eslint": "^7.23.0",
+    "generate-changelog": "^1.8.0"
   },
   "engines": {
     "node": ">=12"
