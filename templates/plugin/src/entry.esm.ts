@@ -1,11 +1,22 @@
-// iife/cjs usage extends esm default export - so import it all
-import component, * as namedExports from "@/entry.esm";
+<% if (ts && version === 3) { -%>
+import { App, DefineComponent, Plugin } from 'vue';
+<% } else if (ts && version === 2) { -%>
+import _Vue, { PluginObject, VueConstructor } from 'vue';
+<% } -%>
 
-// Attach named exports directly to component. IIFE/CJS will
-// only expose one global var, with named exports exposed as properties of
-// that global var (eg. plugin.namedExport)
-Object.entries(namedExports).forEach(([exportName, exported]) => {
-  if (exportName !== "default") component[exportName] = exported;
-});
+<% if (ts) { -%>
+  const install = (<% if (version === 3) { %>app: App, options: any<% } else { %>Vue: typeof _Vue, options: any<% } %>) => {
+<% } else { -%>
+  const install = (<% if (version === 3) { %>app, options: any<% } else { %>Vue, options: any<% } %>) => {
+<% } -%>
+    const topLevelPluginRoute = {
+      path: options.routePrefix,
+      component: "",
+      children: ""
+    }
 
-export default component<% if (ts) { %> as typeof component & Exclude<typeof namedExports, "default"><% } %>;
+    options.router.addRoute(topLevelPluginRoute);
+  };
+
+
+export default install;
