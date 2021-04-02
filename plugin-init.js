@@ -137,6 +137,8 @@ function createPluginProject(options) {
       { "src/entry.esm.ts": `src/entry.esm.${options.language}` },
       { "src/entry.ts": `src/entry.${options.language}` },
       { "dev/serve.ts": `dev/serve.${options.language}` },
+      { "dev/router.ts": `dev/router.${options.language}`},
+      { "dev/store.ts": `dev/store.${options.language}`},
       "dev/serve.vue",
       ".browserslistrc",
       "babel.config.js",
