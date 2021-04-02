@@ -2,6 +2,7 @@
 
 const path = require("path");
 const fs = require("fs");
+const ejs = require("ejs");
 const prompts = require("prompts");
 const chalk = require("chalk");
 const updateCheck = require("update-check");
@@ -97,15 +98,15 @@ function createPluginProject(options) {
   const files = {
     common: [
       "build/rollup.config.js",
-      { "src/entry.esm.ts": `src/entry.esm.${data.language}` },
-      { "src/entry.ts": `src/entry.${data.language}` },
-      { "dev/serve.ts": `dev/serve.${data.language}` },
+      { "src/entry.esm.ts": `src/entry.esm.${options.language}` },
+      { "src/entry.ts": `src/entry.${options.language}` },
+      { "dev/serve.ts": `dev/serve.${options.language}` },
       "dev/serve/vue",
       ".browserslistrc",
       "babel.config.js",
-      (data.language === "ts" && data.version === 2) ? "shims-tsx.d.ts" : null,
-      (data.language === "ts") ? "shims-vue.d.ts" : null,
-      (data.language === "ts") ? "tsconfig.json" : null,
+      (options.language === "ts" && options.version === 2) ? "shims-tsx.d.ts" : null,
+      (options.language === "ts") ? "shims-vue.d.ts" : null,
+      (options.language === "ts") ? "tsconfig.json" : null,
       { "plugin-package.json": "package.json" }
     ]
   }
@@ -133,7 +134,7 @@ function createPluginProject(options) {
     ]);
 
     destPath = path.join.apply(null, [
-      data.componentName,
+      options.componentName,
       ...destPath.split("/")
     ]);
 
