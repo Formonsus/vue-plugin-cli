@@ -21,15 +21,20 @@
     "plugin-init.js"
   ],
   "scripts": {
+    "prepack": "husky install",
     "lint": "eslint ./**/*.js ./**/.*.js",
     "version:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'chore: update CHANGELOG.md' && yarn version --patch && git push origin && git push origin --tags",
     "version:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'chore: update CHANGELOG.md' && yarn version --minor && git push origin && git push origin --tags",
-    "version:major": "changelog -m && git add CHANGELOG.md && git commit -m 'chore: update CHANGELOG.md' && yarn version --major && git push origin && git push origin --tags"
+    "version:major": "changelog -m && git add CHANGELOG.md && git commit -m 'chore: update CHANGELOG.md' && yarn version --major && git push origin && git push origin --tags",
+    "prepare": "husky install"
   },
   "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
     "eslint": "^7.23.0",
-    "generate-changelog": "^1.8.0"
+    "generate-changelog": "^1.8.0",
+    "husky": "^6.0.0"
   },
   "engines": {
     "node": ">=12"
