@@ -101,7 +101,7 @@ function createPluginProject(options) {
       { "src/entry.esm.ts": `src/entry.esm.${options.language}` },
       { "src/entry.ts": `src/entry.${options.language}` },
       { "dev/serve.ts": `dev/serve.${options.language}` },
-      "dev/serve/vue",
+      "dev/serve.vue",
       ".browserslistrc",
       "babel.config.js",
       (options.language === "ts" && options.version === 2) ? "shims-tsx.d.ts" : null,
