@@ -12,6 +12,6 @@ export default <% if (version === 3) {%>defineComponent<% } else { %>Vue.extend<
 
 <template>
   <div id="app">
-    Hello, World
+    <router-view></router-view>
   </div>
 </template>

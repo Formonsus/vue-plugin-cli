@@ -1,8 +1,12 @@
+import router from "./router/index";
 <% if (version === 3) { -%>
   import { createApp } from "vue";
   import Dev from "./serve.vue";
 
   const app = createApp(Dev);
+
+  app.use(router);
+
   app.mount("#app");
   <% } else {
   if (ts) { -%>

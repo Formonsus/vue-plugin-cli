@@ -77,7 +77,8 @@
   },
   "peerDependencies": {
 <% if (version === 3) { -%>
-    "vue": "^3.0.5"
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.1"
 <% } else { -%>
     "vue": "^2.6.12"
 <% } -%>
