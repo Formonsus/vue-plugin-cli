@@ -1,11 +1,11 @@
-declare module "*.vue" {
+declare module '*.vue' {
   <% if (version === 3) { -%>
-    import { DefineComponent } from "vue";
+    import { DefineComponent } from 'vue';
 
     const Component: DefineComponent<{}, {}, any>;
     export default Component;
   <% } else { -%>
-    import Vue from "vue";
+    import Vue from 'vue';
     export default Vue;
   <% } -%>
   }
