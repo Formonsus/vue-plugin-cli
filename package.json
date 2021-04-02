@@ -1,0 +1,43 @@
+{
+  "name": "@formonsus/vue-plugin-cli",
+  "description": "Cli tool to create Vue plugins with Rollup",
+  "author": "Aleksandar Milicevic",
+  "license": "MIT",
+  "version": "0.0.0",
+  "bin": {
+    "plugin-init": "./plugin-init.js"
+  },
+  "keywords": [
+    "vue",
+    "plugin",
+    "cli",
+    "template",
+    "rollup",
+    "generator"
+  ],
+  "homepage": "https://github.com/Formonsus/vue-plugin-cli",
+  "files": [
+    "templates/*",
+    "plugin-init.js"
+  ],
+  "scripts": {
+    "lint": "eslint ./**/*.js ./**/.*.js",
+    "version:patch": "yarn version --patch",
+    "version:minor": "yarn version --minor",
+    "version:major": "yarn version --major",
+    "prerelease:patch": "yarn version --prepatch",
+    "prerelease:minor": "yarn version --preminor",
+    "prerelease:major": "yarn version --premajor"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.23.0"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "volta": {
+    "node": "14.16.0",
+    "yarn": "1.22.10"
+  }
+}
