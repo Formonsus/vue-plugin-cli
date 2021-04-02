@@ -16,6 +16,14 @@
     "generator"
   ],
   "homepage": "https://github.com/Formonsus/vue-plugin-cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Formonsus/vue-plugin-cli"
+  },
+  "bugs": {
+    "url": "https://github.com/Formonsus/vue-plugin-cli/issues",
+    "email": "aleksandarmilicevic18@gmail.com"
+  },
   "files": [
     "templates/*",
     "plugin-init.js"
