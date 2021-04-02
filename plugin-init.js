@@ -12,7 +12,8 @@ const pkg = require("./package");
 // Object to store data from user input response.
 const result = {
   version: "",
-  pluginName: "",
+  npmName: "",
+  componentName: "",
   language: "",
   update: false
 }
@@ -58,13 +59,14 @@ async function getVersion() {
 async function getName() {
   const question = {
     type: "text",
-    name: "pluginName",
+    name: "npmName",
     message: "What is the name of your Vue plugin?"
   };
   const response = await prompts(question, {
     onCancel: onCancel
   });
-  result.pluginName = response.pluginName;
+  result.npmName = response.npmName;
+  result.componentName = response.npmName;
 }
 
 async function getLanguage() {
@@ -84,10 +86,75 @@ async function getLanguage() {
   result.language = response.language;
 }
 
+function createPluginProject(options) {
+  const vars = {
+    npmName: options.npmName,
+    componentName: options.componentName,
+    version: options.version,
+    ts: options.language === "ts"
+  };
+
+  const files = {
+    common: [
+      "build/rollup.config.js",
+      { "src/entry.esm.ts": `src/entry.esm.${data.language}` },
+      { "src/entry.ts": `src/entry.${data.language}` },
+      { "dev/serve.ts": `dev/serve.${data.language}` },
+      "dev/serve/vue",
+      ".browserslistrc",
+      "babel.config.js",
+      (data.language === "ts" && data.version === 2) ? "shims-tsx.d.ts" : null,
+      (data.language === "ts") ? "shims-vue.d.ts" : null,
+      (data.language === "ts") ? "tsconfig.json" : null,
+      { "plugin-package.json": "package.json" }
+    ]
+  }
+
+  const fileActions = [
+    ...files.common.filter((entry) => entry)
+  ];
+
+  fileActions.forEach((fileAction) => {
+    let srcPath;
+    let destPath;
+
+    if (typeof fileAction === "string") {
+      srcPath = fileAction;
+      destPath = fileAction;
+    } else {
+      [[srcPath, destPath]] = Object.entries(entry);
+    }
+
+    srcPath = path.join.apply(null, [
+      __dirname,
+      "templates",
+      "plugin",
+      ...srcPath.split("/")
+    ]);
+
+    destPath = path.join.apply(null, [
+      data.componentName,
+      ...destPath.split("/")
+    ]);
+
+    ensureDirectoryExists(destPath);
+    fs.writeFileSync(destPath, ejs.render(fs.readFileSync(srcPath).toString(), vars));
+  });
+}
+
+const ensureDirectoryExists = (filePath) => {
+  const dirname = path.dirname(filePath);
+  if (fs.existsSync(dirname)) {
+    return true;
+  }
+  ensureDirectoryExists(dirname);
+  return fs.mkdirSync(dirname);
+};
+
 checkForCliToolUpdate()
   .then(getVersion)
   .then(getName)
   .then(getLanguage)
   .then(() => {
-    console.log("Result: ", result);
+    createPluginProject(result);
   });
