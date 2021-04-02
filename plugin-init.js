@@ -16,7 +16,9 @@ const result = {
   npmName: "",
   componentName: "",
   language: "",
-  update: false
+  update: false,
+  useRouter: "",
+  useVuex: ""
 }
 
 // Exit the process.
@@ -85,6 +87,40 @@ async function getLanguage() {
     onCancel: onCancel
   });
   result.language = response.language;
+}
+
+async function useVueRouter() {
+  const question = {
+    type: "select",
+    name: "router",
+    message: "Do you want to install Vue Router?",
+    choices: [
+      { title: "Yes", value: "yes" },
+      { title: "No", value: "no" }
+    ],
+    initial: 0
+  };
+  const response = await prompts(question, {
+    onCancel: onCancel
+  });
+  result.useRouter = response.router;
+}
+
+async function useVuex() {
+  const question = {
+    type: "select",
+    name: "vuex",
+    message: "Do you want to install Vuex?",
+    choices: [
+      { title: "Yes", value: "yes" },
+      { title: "No", value: "no" }
+    ],
+    initial: 0
+  };
+  const response = await prompts(question, {
+    onCancel: onCancel
+  });
+  result.useVuex = response.vuex;
 }
 
 function createPluginProject(options) {
@@ -156,6 +192,8 @@ checkForCliToolUpdate()
   .then(getVersion)
   .then(getName)
   .then(getLanguage)
+  .then(useVueRouter)
+  .then(useVuex)
   .then(() => {
     createPluginProject(result);
   });
