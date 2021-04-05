@@ -142,7 +142,6 @@ function createPluginProject(options) {
       { "src/entry.esm.ts": `src/entry.esm.${options.language}` },
       { "src/entry.ts": `src/entry.${options.language}` },
       { "dev/serve.ts": `dev/serve.${options.language}` },
-      { "dev/store.ts": `dev/store.${options.language}` },
       (options.language === "ts" && options.version === 2) ? "shims-tsx.d.ts" : null,
       (options.language === "ts") ? "shims-vue.d.ts" : null,
       (options.language === "ts") ? "tsconfig.json" : null,
