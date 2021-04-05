@@ -1,5 +1,5 @@
 <template>
   <div class="pluginHome">
-    Hello, World
+    <router-link to="/plugin/counter">Counter</router-link>
   </div>
 </template>

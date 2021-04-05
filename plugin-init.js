@@ -140,6 +140,7 @@ function createPluginProject(options) {
       "dev/serve.vue",
       ".browserslistrc",
       "babel.config.js",
+      "src/components/counter.vue",
       { "src/entry.esm.ts": `src/entry.esm.${options.language}` },
       { "src/entry.ts": `src/entry.${options.language}` },
       { "dev/serve.ts": `dev/serve.${options.language}` },
@@ -149,12 +150,20 @@ function createPluginProject(options) {
       { "plugin-package.json": "package.json" }
     ],
     vueRouter: [
+      { "src/router/routes.ts": `src/router/routes.${options.language}` },
       { "dev/router/index.ts": `dev/router/index.${options.language}` },
       { "dev/router/routes.ts": `dev/router/routes.${options.language}` },
-      "dev/router/views/home.vue"
+      "dev/router/views/home.vue",
+      "src/router/views/home.vue",
+      "src/router/views/plugin.vue"
     ],
     vuex: [
-      { "dev/state/store.ts": `dev/state/store.${options.language}` }
+      { "dev/state/store.ts": `dev/state/store.${options.language}` },
+      { "src/state/counter/actions.ts": `src/state/counter/actions.${options.language}` },
+      { "src/state/counter/interfaces.ts": `src/state/counter/interfaces.${options.language}` },
+      { "src/state/counter/mutations.ts": `src/state/counter/mutations.${options.language}` },
+      { "src/state/counter/state.ts": `src/state/counter/state.${options.language}` },
+      { "src/state/counter/index.ts": `src/state/counter/index.${options.language}` }
     ]
   }
 

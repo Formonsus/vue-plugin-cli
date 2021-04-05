@@ -1,3 +1,5 @@
+import plugin from "../src/entry.esm";
+
 <% if (vuex) { -%>
 import store from "./state/store";
 <% } -%>
@@ -11,11 +13,18 @@ import { createApp } from "vue";
 
 const app = createApp(Dev);
 
-<% if (vueRouter) { -%>
-app.use(router);
-<% } -%>
 <% if (vuex) { -%>
 app.use(store);
+<% } -%>
+
+app.use(plugin, {
+  router: router,
+  store: store,
+  routePrefix: "/plugin"
+});
+
+<% if (vueRouter) { -%>
+app.use(router);
 <% } -%>
 
 app.mount("#app");
