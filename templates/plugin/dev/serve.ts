@@ -1,30 +1,36 @@
-import router from "./router/index";
 import store from "./state/store";
 <% if (version === 3) { -%>
-  import { createApp } from "vue";
-  import Dev from "./serve.vue";
+import { createApp } from "vue";
 
-  const app = createApp(Dev);
+<% if (vueRouter) { -%>
+import router from "./router/index";
+<% } -%>
+import Dev from "./serve.vue";
 
-  app.use(router);
-  app.use(store);
+const app = createApp(Dev);
 
-  app.mount("#app");
-  <% } else {
-  if (ts) { -%>
-  import Vue, { VNode } from "vue";
-  <% } else { -%>
-  import Vue from "vue";
-  <% } -%>
-  import Dev from "./serve.vue";
+<% if (vueRouter) { -%>
+app.use(router);
+<% } -%>
 
-  Vue.config.productionTip = false;
+app.use(store);
 
-  new Vue({
-  <% if (ts) { -%>
-    render: (h): VNode => h(Dev),
-  <% } else { -%>
-    render: (h) => h(Dev),
-  <% } -%>
-  }).$mount("#app");
-  <% } -%>
+app.mount("#app");
+<% } else {
+if (ts) { -%>
+import Vue, { VNode } from "vue";
+<% } else { -%>
+import Vue from "vue";
+<% } -%>
+import Dev from "./serve.vue";
+
+Vue.config.productionTip = false;
+
+new Vue({
+<% if (ts) { -%>
+  render: (h): VNode => h(Dev),
+<% } else { -%>
+  render: (h) => h(Dev),
+<% } -%>
+}).$mount("#app");
+<% } -%>

@@ -159,7 +159,7 @@ function createPluginProject(options) {
 
   const fileActions = [
     ...files.common.filter((entry) => entry),
-    ...files.vueRouter.filter((entry) => entry),
+    ...(options.useRouter === "yes") ? files.vueRouter.filter((entry) => entry) : [],
     ...files.vuex.filter((entry) => entry)
   ];
 
