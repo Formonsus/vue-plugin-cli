@@ -1,6 +1,5 @@
 import { Commit } from "vuex";
 
-
 export interface IRootState {
   root: boolean,
   version: string
@@ -10,22 +9,21 @@ export interface CounterState {
   counter: number;
 }
 
-export type CounterMutations<S = CounterState> = {
-  [MutationTypes.SET_COUNTER](state: S, payload: number): void;
-  [MutationTypes.RESET_COUNTER](state: S): void;
-}
-
 export enum MutationTypes {
-  SET_COUNTER = "SET_COUNTER",
-  RESET_COUNTER = "RESET_COUNTER"
+  INCREMENT_COUNTER = "INCREMENT_COUNTER",
+  DECREMENT_COUNTER = "DECREMENT_COUNTER"
 }
 
 export enum ActionTypes {
-  SET_COUNTER = "SET_COUNTER",
-  RESET_COUNTER = "RESETS_COUNTER"
+  INCREMENT_COUNTER = "INCREMENT_COUNTER",
+  DECREMENT_COUNTER = "DECREMENT_COUNTER"
 }
 
+export type CounterMutations<S = CounterState> = {
+  [MutationTypes.INCREMENT_COUNTER](state: S): void;
+  [MutationTypes.DECREMENT_COUNTER](state: S): void;
+}
 export interface CounterActions {
-  [ActionTypes.SET_COUNTER]({ commit }: { commit: Commit}, payload: number): void;
-  [ActionTypes.RESET_COUNTER]({ commit }: { commit: Commit }): void;
+  [ActionTypes.INCREMENT_COUNTER]({ commit }: { commit: Commit}): void;
+  [ActionTypes.DECREMENT_COUNTER]({ commit }: { commit: Commit }): void;
 }

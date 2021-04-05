@@ -3,11 +3,11 @@ import { MutationTree } from "vuex";
 import { MutationTypes, CounterMutations, CounterState } from "./interfaces";
 
 export const mutations: MutationTree<CounterState> & CounterMutations = {
-  [MutationTypes.SET_COUNTER](state: CounterState, payload: number) {
-    state.counter = payload;
+  [MutationTypes.INCREMENT_COUNTER](state: CounterState) {
+    state.counter++;
   },
 
-  [MutationTypes.RESET_COUNTER](state: CounterState) {
-    state.counter = 0;
+  [MutationTypes.DECREMENT_COUNTER](state: CounterState) {
+    state.counter--;
   }
 }

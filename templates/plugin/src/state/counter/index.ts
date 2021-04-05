@@ -6,6 +6,7 @@ import { state } from "./state";
 import { CounterState, IRootState } from "./interfaces";
 
 const counter: Module<CounterState, IRootState> = {
+  namespaced: true,
   actions,
   mutations,
   state

@@ -20,7 +20,7 @@ import Vue from 'vue';
     }
 
     options.router.addRoute(topLevelPluginRoute);
-    options.store.registerModule("counter", counter);
+    options.store.registerModule("counterModule", counter);
   };
 
 
