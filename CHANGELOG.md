@@ -1,3 +1,30 @@
+### 0.4.0 (2021-04-05)
+
+##### New Features
+
+*  default plugin name ([7cb6fcbe](https://github.com/Formonsus/vue-plugin-cli/commit/7cb6fcbe3a6d2704213ab1600619f2ae75586de4))
+*  copy vuex files only if Vuex was selected during prompt ([4e77c133](https://github.com/Formonsus/vue-plugin-cli/commit/4e77c1335fdd1426d59bc51cc44a62cda5d28113))
+*  copy router files only if Vue Router was selected during prompt ([14b6e1c4](https://github.com/Formonsus/vue-plugin-cli/commit/14b6e1c4ebd245147a2df4ae48fec99130635490))
+*  depending on the Vue version use different syntax for Vue Router ([25c50946](https://github.com/Formonsus/vue-plugin-cli/commit/25c50946629afbb805708b33968045c003768698))
+*  depending on Vue version use different syntax for creating a Vuex store ([b60b4711](https://github.com/Formonsus/vue-plugin-cli/commit/b60b4711a4a0bf1c3b0fa276a5e425af8cd892c6))
+*  add appropriate vue router and vuex versions to package.json ([1f0f3e3c](https://github.com/Formonsus/vue-plugin-cli/commit/1f0f3e3c0f8f6c40530a2678abf5c3faf335d49c))
+*  add vue router and vuex selection to generator ([2742a6cf](https://github.com/Formonsus/vue-plugin-cli/commit/2742a6cfff8f6fc7c258b2710d5df171577b75a2))
+*  add router and store files to cli script ([7799ad9e](https://github.com/Formonsus/vue-plugin-cli/commit/7799ad9e4159a5510205ef8da9293bb8504d5c33))
+*  add router and store definitions for development environment of Vue plugin ([1150015d](https://github.com/Formonsus/vue-plugin-cli/commit/1150015d515cda8797de12131919518302a4d8da))
+*  add two more question prompts, use router and use vuex ([35747bed](https://github.com/Formonsus/vue-plugin-cli/commit/35747bedbceb2f4385afa93690f6c8ab6a0e1c35))
+
+##### Bug Fixes
+
+*  fixing Vue 2 template ([ca4d6fa5](https://github.com/Formonsus/vue-plugin-cli/commit/ca4d6fa587f436932c57327dbf43f335fba8e8d5))
+*  remove unused file and fix ejs template ([eabc9433](https://github.com/Formonsus/vue-plugin-cli/commit/eabc9433dc35f1a4fcea74935dfa7c3c3297c255))
+*  remove types for non typescript projects ([8e81173f](https://github.com/Formonsus/vue-plugin-cli/commit/8e81173fcbd8661cd495d171b5383529209729c5))
+*  fix the output of template ([00fabf7f](https://github.com/Formonsus/vue-plugin-cli/commit/00fabf7f387fd5583a88ebf48cb1e09d2cc703ab))
+
+##### Refactors
+
+*  add new file groups ([a254a3f8](https://github.com/Formonsus/vue-plugin-cli/commit/a254a3f8a3d0de9c9a8177d603de4c902da0731b))
+*  separate vue router and vuex files, move store.ts file ([349f3f13](https://github.com/Formonsus/vue-plugin-cli/commit/349f3f1365c9aa7832bc0eefbc0a95f3ba9528ce))
+
 ### 0.3.0 (2021-04-02)
 
 ##### Chores
