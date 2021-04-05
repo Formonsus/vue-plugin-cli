@@ -63,7 +63,8 @@ async function getName() {
   const question = {
     type: "text",
     name: "npmName",
-    message: "What is the name of your Vue plugin?"
+    message: "What is the name of your Vue plugin?",
+    initial: "my-plugin"
   };
   const response = await prompts(question, {
     onCancel: onCancel

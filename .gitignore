@@ -114,3 +114,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# my-plugin folder for local testing of CLI
+my-plugin
