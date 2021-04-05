@@ -128,7 +128,9 @@ function createPluginProject(options) {
     npmName: options.npmName,
     componentName: options.componentName,
     version: options.version,
-    ts: options.language === "ts"
+    ts: options.language === "ts",
+    vueRouter: options.useRouter === "yes",
+    vuex: options.useVuex === "yes"
   };
 
   const files = {
