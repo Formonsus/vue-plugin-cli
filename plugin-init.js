@@ -136,20 +136,25 @@ function createPluginProject(options) {
   const files = {
     common: [
       "build/rollup.config.js",
-      { "src/entry.esm.ts": `src/entry.esm.${options.language}` },
-      { "src/entry.ts": `src/entry.${options.language}` },
-      { "dev/serve.ts": `dev/serve.${options.language}` },
-      { "dev/router/index.ts": `dev/router/index.${options.language}` },
-      { "dev/router/routes.ts": `dev/router/routes.${options.language}` },
-      { "dev/store.ts": `dev/store.${options.language}` },
-      "dev/router/views/home.vue",
       "dev/serve.vue",
       ".browserslistrc",
       "babel.config.js",
+      { "src/entry.esm.ts": `src/entry.esm.${options.language}` },
+      { "src/entry.ts": `src/entry.${options.language}` },
+      { "dev/serve.ts": `dev/serve.${options.language}` },
+      { "dev/store.ts": `dev/store.${options.language}` },
       (options.language === "ts" && options.version === 2) ? "shims-tsx.d.ts" : null,
       (options.language === "ts") ? "shims-vue.d.ts" : null,
       (options.language === "ts") ? "tsconfig.json" : null,
       { "plugin-package.json": "package.json" }
+    ],
+    vueRouter: [
+      { "dev/router/index.ts": `dev/router/index.${options.language}` },
+      { "dev/router/routes.ts": `dev/router/routes.${options.language}` },
+      "dev/router/views/home.vue"
+    ],
+    vuex: [
+      { "dev/state/store.ts": `dev/state/store.${options.language}` }
     ]
   }
 
