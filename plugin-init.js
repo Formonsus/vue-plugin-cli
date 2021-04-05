@@ -190,6 +190,17 @@ function createPluginProject(options) {
     ensureDirectoryExists(destPath);
     fs.writeFileSync(destPath, ejs.render(fs.readFileSync(srcPath).toString(), vars));
   });
+
+  console.log(`
+    Init is completed, your files have been generated and saved in the directory [${vars.npmName}] you specified above.
+    Next steps to start plugin for development:
+
+    1. cd ${vars.npmName}
+    2. yarn
+    3. yarn serve
+
+    When you're ready, run "yarn build" to generate the redistributable version of your plugin.
+  `);
 }
 
 const ensureDirectoryExists = (filePath) => {
