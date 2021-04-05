@@ -1,7 +1,10 @@
-import store from "./state/store";
+
 <% if (version === 3) { -%>
 import { createApp } from "vue";
 
+<% if (vuex) { -%>
+import store from "./state/store";
+<% } -%>
 <% if (vueRouter) { -%>
 import router from "./router/index";
 <% } -%>
@@ -12,8 +15,9 @@ const app = createApp(Dev);
 <% if (vueRouter) { -%>
 app.use(router);
 <% } -%>
-
+<% if (vueRouter) { -%>
 app.use(store);
+<% } -%>
 
 app.mount("#app");
 <% } else {
