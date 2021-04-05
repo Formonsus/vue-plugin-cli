@@ -159,7 +159,9 @@ function createPluginProject(options) {
   }
 
   const fileActions = [
-    ...files.common.filter((entry) => entry)
+    ...files.common.filter((entry) => entry),
+    ...files.vueRouter.filter((entry) => entry),
+    ...files.vuex.filter((entry) => entry)
   ];
 
   fileActions.forEach((fileAction) => {
