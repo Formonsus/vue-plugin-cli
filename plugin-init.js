@@ -12,7 +12,6 @@ const pkg = require("./package");
 
 // Object to store data from user input response.
 const result = {
-  version: "",
   npmName: "",
   language: "",
   update: false,
@@ -39,23 +38,6 @@ async function checkForCliToolUpdate() {
   if (update) {
     result.update = update;
   }
-}
-
-async function getVersion() {
-  const question = {
-    type: "select",
-    name: "version",
-    message: "Which version of Vue you want to use?",
-    choices: [
-      { title: "Vue 3 (recommended)", value: 3 },
-      { title: "Vue 2", value: 2 }
-    ],
-    initial: 0
-  };
-  const response = await prompts(question, {
-    onCancel: onCancel
-  });
-  result.version = response.version;
 }
 
 async function getName() {
@@ -126,7 +108,6 @@ function createPluginProject(options) {
   const vars = {
     npmName: options.npmName,
     npmName: options.npmName,
-    version: options.version,
     ts: options.language === "ts",
     vueRouter: options.useRouter === "yes",
     vuex: options.useVuex === "yes"
@@ -142,7 +123,6 @@ function createPluginProject(options) {
       { "src/entry.esm.ts": `src/entry.esm.${options.language}` },
       { "src/entry.ts": `src/entry.${options.language}` },
       { "dev/serve.ts": `dev/serve.${options.language}` },
-      (options.language === "ts" && options.version === 2) ? "shims-tsx.d.ts" : null,
       (options.language === "ts") ? "shims-vue.d.ts" : null,
       (options.language === "ts") ? "tsconfig.json" : null,
       { "plugin-package.json": "package.json" }
@@ -220,7 +200,6 @@ const ensureDirectoryExists = (filePath) => {
 };
 
 checkForCliToolUpdate()
-  .then(getVersion)
   .then(getName)
   .then(getLanguage)
   .then(useVueRouter)

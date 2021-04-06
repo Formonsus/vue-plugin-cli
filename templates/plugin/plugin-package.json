@@ -47,48 +47,25 @@
     "@vue/cli-plugin-typescript": "^4.5.10",
 <% } -%>
     "@vue/cli-service": "^4.5.10",
-<% if (version === 3) { -%>
     "@vue/compiler-sfc": "^3.0.5",
-<% } -%>
     "cross-env": "^7.0.3",
     "minimist": "^1.2.5",
-<% if (version === 3) { -%>
     "postcss": "^8.2.3",
-<% } -%>
     "rollup": "^2.36.1",
-<% if (version === 3) { -%>
     "rollup-plugin-postcss": "^4.0.0",
-<% } -%>
     "rollup-plugin-terser": "^7.0.2",
-<% if (version === 3) { -%>
     "rollup-plugin-vue": "^6.0.0",
-<% } else { -%>
-    "rollup-plugin-vue": "^5.1.9",
-<% } -%>
 <% if (ts) { -%>
     "typescript": "^3.8.3",
 <% } -%>
-<% if (version === 3) { -%>
     "vue": "^3.0.5",
     "vue-router": "^4.0.1",
     "vuex": "^4.0.0"
-<% } else { -%>
-    "vue": "^2.6.12",
-    "vue-template-compiler": "^2.6.12",
-    "vue-router": "^3.5.1",
-    "vuex": "^3.6.2"
-<% } -%>
   },
   "peerDependencies": {
-<% if (version === 3) { -%>
     "vue": "^3.0.5",
     "vue-router": "^4.0.1",
     "vuex": "^4.0.0"
-<% } else { -%>
-    "vue": "^2.6.12",
-    "vue-router": "^3.5.1",
-    "vuex": "^3.6.2"
-<% } -%>
   },
   "engines": {
     "node": ">=12"

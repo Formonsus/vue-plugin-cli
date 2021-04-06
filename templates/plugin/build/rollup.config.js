@@ -7,9 +7,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import babel from '@rollup/plugin-babel';
-<% if (version === 3) { -%>
 import PostCSS from 'rollup-plugin-postcss';
-<% } -%>
 import { terser } from 'rollup-plugin-terser';
 import minimist from 'minimist';
 
@@ -40,18 +38,15 @@ const baseConfig = {
       'process.env.NODE_ENV': JSON.stringify('production'),
     },
     vue: {
-<% if (version === 2) { -%>
       css: true,
       template: {
         isProduction: true,
       },
-<% } -%>
     },
     postVue: [
       resolve({
         extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
       }),
-<% if (version === 3) { -%>
       // Process only `<style module>` blocks.
       PostCSS({
         modules: {
@@ -61,7 +56,6 @@ const baseConfig = {
       }),
       // Process all `<style>` blocks except `<style module>`.
       PostCSS({ include: /(?<!&module=.*)\.css$/ }),
-<% } -%>
     ],
     babel: {
       exclude: 'node_modules/**',
