@@ -1,3 +1,9 @@
+#### 0.5.1 (2021-04-06)
+
+##### Bug Fixes
+
+*  replace hardcoded id with plugin name ([be585a9f](https://github.com/Formonsus/vue-plugin-cli/commit/be585a9f519bcb9ce349f46ca27aa0408268cec9))
+
 ### 0.5.0 (2021-04-06)
 
 ##### New Features
