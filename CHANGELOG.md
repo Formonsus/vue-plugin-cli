@@ -1,3 +1,20 @@
+### 0.5.0 (2021-04-06)
+
+##### New Features
+
+*  add example counter component and counter Vuex module ([743e836d](https://github.com/Formonsus/vue-plugin-cli/commit/743e836d295b58a7da48650522a2dadd905b5e7f))
+*  add information paragraph to home page of dev ([df53a378](https://github.com/Formonsus/vue-plugin-cli/commit/df53a37858216801dd53883568076aab8e7ee316))
+*  creating starting development template ([03af6826](https://github.com/Formonsus/vue-plugin-cli/commit/03af6826a4914dcde9bab3e302008c85075f7f56))
+
+##### Bug Fixes
+
+*  add message with instructions on next step when script is completed ([35fb72fd](https://github.com/Formonsus/vue-plugin-cli/commit/35fb72fddbae4d83c6bd2bf442c222bb4bd5e4fa))
+
+##### Refactors
+
+*  remove componentName property and use npm instead ([851476ec](https://github.com/Formonsus/vue-plugin-cli/commit/851476ec32937c61892c8a7714b9318731fe17ef))
+*  remove h1 from home page ([8fbee46e](https://github.com/Formonsus/vue-plugin-cli/commit/8fbee46e1bf57e9758c190be7a8a5e1858c1c546))
+
 ### 0.4.0 (2021-04-05)
 
 ##### New Features
