@@ -1,3 +1,9 @@
+### 0.6.0 (2021-04-06)
+
+##### Refactors
+
+*  drop support for Vue 2 ([76eaf479](https://github.com/Formonsus/vue-plugin-cli/commit/76eaf479a393b4c87ff1ecbe1a5692cbbe86b3d8))
+
 #### 0.5.1 (2021-04-06)
 
 ##### Bug Fixes
