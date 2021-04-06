@@ -95,7 +95,7 @@ if (!argv.format || argv.format === 'es') {
     input: 'src/entry.esm.<% if (ts) {%>ts<% } else { %>js<% } %>',
     external,
     output: {
-      file: 'dist/<%-componentName%>.esm.js',
+      file: 'dist/<%-npmName%>.esm.js',
       format: 'esm',
       exports: 'named',
     },

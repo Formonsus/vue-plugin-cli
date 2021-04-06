@@ -3,18 +3,18 @@
   "version": "1.0.0",
   "description": "",
 
-  "main": "dist/<%-componentName%>.ssr.js",
-  "browser": "dist/<%-componentName%>.esm.js",
-  "module": "dist/<%-componentName%>.esm.js",
-  "unpkg": "dist/<%-componentName%>.min.js",
+  "main": "dist/<%-npmName%>.ssr.js",
+  "browser": "dist/<%-npmName%>.esm.js",
+  "module": "dist/<%-npmName%>.esm.js",
+  "unpkg": "dist/<%-npmName%>.min.js",
 <% if (ts) { -%>
-  "types": "<%-componentName%>.d.ts",
+  "types": "<%-npmName%>.d.ts",
 <% } -%>
 
   "files": [
     "dist/*",
 <% if (ts) { -%>
-    "<%-componentName%>.d.ts",
+    "<%-npmName%>.d.ts",
 <% } -%>
     "src/**/*.vue"
   ],

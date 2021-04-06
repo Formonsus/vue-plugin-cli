@@ -14,7 +14,6 @@ const pkg = require("./package");
 const result = {
   version: "",
   npmName: "",
-  componentName: "",
   language: "",
   update: false,
   useRouter: "",
@@ -70,7 +69,6 @@ async function getName() {
     onCancel: onCancel
   });
   result.npmName = response.npmName;
-  result.componentName = response.npmName;
 }
 
 async function getLanguage() {
@@ -127,7 +125,7 @@ async function useVuex() {
 function createPluginProject(options) {
   const vars = {
     npmName: options.npmName,
-    componentName: options.componentName,
+    npmName: options.npmName,
     version: options.version,
     ts: options.language === "ts",
     vueRouter: options.useRouter === "yes",
@@ -192,7 +190,7 @@ function createPluginProject(options) {
     ]);
 
     destPath = path.join.apply(null, [
-      options.componentName,
+      options.npmName,
       ...destPath.split("/")
     ]);
 
