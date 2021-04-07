@@ -14,9 +14,7 @@ const pkg = require("./package");
 const result = {
   npmName: "",
   language: "",
-  update: false,
-  useRouter: "",
-  useVuex: ""
+  update: false
 }
 
 // Exit the process.
@@ -70,40 +68,6 @@ async function getLanguage() {
   result.language = response.language;
 }
 
-async function useVueRouter() {
-  const question = {
-    type: "select",
-    name: "router",
-    message: "Do you want to install Vue Router?",
-    choices: [
-      { title: "Yes", value: "yes" },
-      { title: "No", value: "no" }
-    ],
-    initial: 0
-  };
-  const response = await prompts(question, {
-    onCancel: onCancel
-  });
-  result.useRouter = response.router;
-}
-
-async function useVuex() {
-  const question = {
-    type: "select",
-    name: "vuex",
-    message: "Do you want to install Vuex?",
-    choices: [
-      { title: "Yes", value: "yes" },
-      { title: "No", value: "no" }
-    ],
-    initial: 0
-  };
-  const response = await prompts(question, {
-    onCancel: onCancel
-  });
-  result.useVuex = response.vuex;
-}
-
 function createPluginProject(options) {
   const vars = {
     npmName: options.npmName,
@@ -147,8 +111,8 @@ function createPluginProject(options) {
 
   const fileActions = [
     ...files.common.filter((entry) => entry),
-    ...(options.useRouter === "yes") ? files.vueRouter.filter((entry) => entry) : [],
-    ...(options.useVuex === "yes") ? files.vuex.filter((entry) => entry) : []
+    ...files.vueRouter.filter((entry) => entry),
+    ...files.vuex.filter((entry) => entry)
   ];
 
   fileActions.forEach((fileAction) => {
@@ -202,8 +166,6 @@ const ensureDirectoryExists = (filePath) => {
 checkForCliToolUpdate()
   .then(getName)
   .then(getLanguage)
-  .then(useVueRouter)
-  .then(useVuex)
   .then(() => {
     createPluginProject(result);
   });
