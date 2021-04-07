@@ -1,3 +1,15 @@
+### 0.7.0 (2021-04-07)
+
+##### Documentation Changes
+
+*  add developer instructions to home page ([89d31338](https://github.com/Formonsus/vue-plugin-cli/commit/89d31338f5df0375b78340453486ed76aabfb6fe))
+*  add some comment explaining each file purpose ([d7038589](https://github.com/Formonsus/vue-plugin-cli/commit/d70385891cc34f313e4b9e5b1b99f5c6cfd114f8))
+
+##### Refactors
+
+*  style dev home page and add more information ([03bc52de](https://github.com/Formonsus/vue-plugin-cli/commit/03bc52deacfe98939af70f4e31505af6f731462b))
+*  local development app ([3710a6c1](https://github.com/Formonsus/vue-plugin-cli/commit/3710a6c192b2a215ff17c9dbd5f34736e6e8105b))
+
 ### 0.6.0 (2021-04-06)
 
 ##### Refactors
