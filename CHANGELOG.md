@@ -1,3 +1,9 @@
+### 0.8.0 (2021-04-07)
+
+##### Refactors
+
+*  opt in for vue router and vuex ([ddf38198](https://github.com/Formonsus/vue-plugin-cli/commit/ddf381988c986ac9014bf25d31cc1924f1332fec))
+
 ### 0.7.0 (2021-04-07)
 
 ##### Documentation Changes
