@@ -1,8 +1,8 @@
+import { App } from 'vue';
+
 import counter from "./state/counter";
 import routes from "./router/routes";
 import home from "./router/views/home.vue";
-
-import { App } from 'vue';
 
 <% if (ts) { -%>
   const install = (_app: App, options: any) => {

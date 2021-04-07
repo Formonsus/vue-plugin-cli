@@ -9,12 +9,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue"
 import { mapState, mapActions } from "vuex"
 
 export default defineComponent({
   computed: {
-    ...mapState('counterModule', ['counter'])
+    ...mapState("counterModule", ["counter"])
   },
   methods: {
     ...mapActions({
