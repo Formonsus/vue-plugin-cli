@@ -1,3 +1,13 @@
+#### 1.1.1 (2021-04-08)
+
+##### Build System / Dependencies
+
+*  update rollup config ([137d2b7a](https://github.com/Formonsus/vue-plugin-cli/commit/137d2b7afe9ade2684cea45ea51d9a6d2de532b2))
+
+##### Refactors
+
+*  update plugin-package.json ([3006e7d6](https://github.com/Formonsus/vue-plugin-cli/commit/3006e7d6a92bd55c7da49d278bee8d1ecb4a7053))
+
 ### 1.1.0 (2021-04-08)
 
 ##### New Features
