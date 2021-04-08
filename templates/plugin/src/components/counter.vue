@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from "vue"
 import { mapState, mapActions } from "vuex"
 
@@ -18,8 +18,8 @@ export default defineComponent({
   },
   methods: {
     ...mapActions({
-      increment: "counterModule/INCREMENT_COUNTER",
-      decrement: "counterModule/DECREMENT_COUNTER"
+      increment: "counterModule/incrementCounter",
+      decrement: "counterModule/decrementCounter"
     })
   }
 })

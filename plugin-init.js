@@ -13,7 +13,6 @@ const pkg = require("./package");
 // Object to store data from user input response.
 const result = {
   npmName: "",
-  language: "",
   update: false
 }
 
@@ -51,28 +50,9 @@ async function getName() {
   result.npmName = response.npmName;
 }
 
-async function getLanguage() {
-  const question = {
-    type: "select",
-    name: "language",
-    message: "Do you want to use JavaScript or TypeScript?",
-    choices: [
-      { title: "TypeScript (recommended)", value: "ts" },
-      { title: "JavaScript", value: "js" }
-    ],
-    initial: 0
-  };
-  const response = await prompts(question, {
-    onCancel: onCancel
-  });
-  result.language = response.language;
-}
-
 function createPluginProject(options) {
   const vars = {
     npmName: options.npmName,
-    npmName: options.npmName,
-    ts: options.language === "ts",
     vueRouter: options.useRouter === "yes",
     vuex: options.useVuex === "yes"
   };
@@ -84,28 +64,25 @@ function createPluginProject(options) {
       ".browserslistrc",
       "babel.config.js",
       "src/components/counter.vue",
-      { "src/entry.esm.ts": `src/entry.esm.${options.language}` },
-      { "src/entry.ts": `src/entry.${options.language}` },
-      { "dev/serve.ts": `dev/serve.${options.language}` },
-      (options.language === "ts") ? "shims-vue.d.ts" : null,
-      (options.language === "ts") ? "tsconfig.json" : null,
+      "src/entry.esm.js",
+      "src/entry.js",
+      "dev/serve.js",
       { "plugin-package.json": "package.json" }
     ],
     vueRouter: [
-      { "src/router/routes.ts": `src/router/routes.${options.language}` },
-      { "dev/router/index.ts": `dev/router/index.${options.language}` },
-      { "dev/router/routes.ts": `dev/router/routes.${options.language}` },
+      "src/router/routes.js",
+      "dev/router/index.js",
+      "dev/router/routes.js",
       "dev/router/views/home.vue",
       "src/router/views/home.vue",
       "src/router/views/plugin.vue"
     ],
     vuex: [
-      { "dev/state/store.ts": `dev/state/store.${options.language}` },
-      { "src/state/counter/actions.ts": `src/state/counter/actions.${options.language}` },
-      { "src/state/counter/interfaces.ts": `src/state/counter/interfaces.${options.language}` },
-      { "src/state/counter/mutations.ts": `src/state/counter/mutations.${options.language}` },
-      { "src/state/counter/state.ts": `src/state/counter/state.${options.language}` },
-      { "src/state/counter/index.ts": `src/state/counter/index.${options.language}` }
+      "dev/state/store.js",
+      "src/state/counter/actions.js",
+      "src/state/counter/mutations.js",
+      "src/state/counter/state.js",
+      "src/state/counter/index.js"
     ]
   }
 
@@ -165,7 +142,6 @@ const ensureDirectoryExists = (filePath) => {
 
 checkForCliToolUpdate()
   .then(getName)
-  .then(getLanguage)
   .then(() => {
     createPluginProject(result);
   });
