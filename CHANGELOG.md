@@ -1,3 +1,18 @@
+### 1.1.0 (2021-04-08)
+
+##### New Features
+
+*  setup git repo, install dependencies and console output ([777ce9a5](https://github.com/Formonsus/vue-plugin-cli/commit/777ce9a542dbcdb6bddb229a209253bf1f85bd85))
+*  display current version and latest vesrion ([b3ea9ed5](https://github.com/Formonsus/vue-plugin-cli/commit/b3ea9ed5876814169204ce7645cd2f673b7b8ec0))
+
+##### Bug Fixes
+
+*  remove console.log ([5ffb7ef7](https://github.com/Formonsus/vue-plugin-cli/commit/5ffb7ef79f19f18331fd9f3ed3b8c7ca95367f80))
+
+##### Refactors
+
+*  remove unused properties ([8664674a](https://github.com/Formonsus/vue-plugin-cli/commit/8664674adbd37aa32bb78050acb93b9d26fb8976))
+
 ## 1.0.0 (2021-04-08)
 
 ##### Refactors
