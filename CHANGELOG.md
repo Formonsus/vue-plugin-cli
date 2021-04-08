@@ -1,3 +1,13 @@
+#### 1.1.3 (2021-04-08)
+
+##### Chores
+
+*  npmrc ([574f7f06](https://github.com/Formonsus/vue-plugin-cli/commit/574f7f061455739e89acd997086113bee5bf9e1d))
+
+##### Bug Fixes
+
+*  navigate to pwd ([35c0f5d3](https://github.com/Formonsus/vue-plugin-cli/commit/35c0f5d321057dc477af5d36859cb720feb657ed))
+
 #### 1.1.2 (2021-04-08)
 
 ##### Documentation Changes
