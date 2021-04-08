@@ -1,3 +1,9 @@
+#### 1.1.6 (2021-04-08)
+
+##### Bug Fixes
+
+*  fixed save path ([54a74191](https://github.com/Formonsus/vue-plugin-cli/commit/54a7419188ff19326d2f298906684b9c4b706085))
+
 #### 1.1.5 (2021-04-08)
 
 ##### Bug Fixes
