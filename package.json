@@ -18,7 +18,7 @@
   "homepage": "https://github.com/Formonsus/vue-plugin-cli",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Formonsus/vue-plugin-cli"
+    "url": "git@github.com:Formonsus/vue-plugin-cli.git"
   },
   "bugs": {
     "url": "https://github.com/Formonsus/vue-plugin-cli/issues",
