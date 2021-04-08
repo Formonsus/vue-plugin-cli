@@ -64,6 +64,7 @@ async function getName() {
 }
 
 function createPluginProject(options) {
+  shelljs.exec(`cd ./${process.pwd}`);
   console.log(`✨ Creating project in ${chalk.yellow(__dirname + "/" + options.npmName)}`);
   console.log(`🚀 Invoking generator...`);
   const vars = {
