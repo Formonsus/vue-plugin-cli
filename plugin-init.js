@@ -52,9 +52,7 @@ async function getName() {
 
 function createPluginProject(options) {
   const vars = {
-    npmName: options.npmName,
-    vueRouter: options.useRouter === "yes",
-    vuex: options.useVuex === "yes"
+    npmName: options.npmName
   };
 
   const files = {
