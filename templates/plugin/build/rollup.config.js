@@ -115,5 +115,59 @@ if (!argv.format || argv.format === 'es') {
   buildFormats.push(esConfig);
 }
 
+if (!argv.format || argv.format === 'cjs') {
+  const umdConfig = {
+    ...baseConfig,
+    external,
+    output: {
+      compact: true,
+      file: 'dist/<%-npmName%>.ssr.js',
+      format: 'cjs',
+      name: '<%-npmName%>',
+      exports: 'auto',
+      globals,
+    },
+    plugins: [
+      replace(baseConfig.plugins.replace),
+      ...baseConfig.plugins.preVue,
+      vue(baseConfig.plugins.vue),
+      ...baseConfig.plugins.postVue,
+      babel(baseConfig.plugins.babel),
+      commonjs(),
+    ],
+  };
+  buildFormats.push(umdConfig);
+}
+
+if (!argv.format || argv.format === 'iife') {
+  const unpkgConfig = {
+    ...baseConfig,
+    external,
+    output: {
+      extend: true,
+      compact: true,
+      file: 'dist/<%-npmName%>.min.js',
+      format: 'iife',
+      name: '<%-npmName%>',
+      exports: 'auto',
+      globals,
+    },
+    plugins: [
+      replace(baseConfig.plugins.replace),
+      ...baseConfig.plugins.preVue,
+      vue(baseConfig.plugins.vue),
+      ...baseConfig.plugins.postVue,
+      babel(baseConfig.plugins.babel),
+      commonjs(),
+      terser({
+        output: {
+          ecma: 5,
+        },
+      }),
+    ],
+  };
+  buildFormats.push(unpkgConfig);
+}
+
 // Export config
 export default buildFormats;
