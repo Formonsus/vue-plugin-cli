@@ -1,3 +1,9 @@
+#### 1.1.4 (2021-04-08)
+
+##### Bug Fixes
+
+*  use shelljs to get pwd ([578f431f](https://github.com/Formonsus/vue-plugin-cli/commit/578f431fdc401b74309b06cec9f7f0648205c587))
+
 #### 1.1.3 (2021-04-08)
 
 ##### Chores
