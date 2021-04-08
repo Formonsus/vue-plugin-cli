@@ -64,8 +64,7 @@ async function getName() {
 }
 
 function createPluginProject(options) {
-  const pwd = shelljs.pwd()
-  const savePath = pwd.stdout;
+  const savePath = process.env.INIT_CWD;
   console.log(`✨ Creating project in ${chalk.yellow(savePath + "/" + options.npmName)}`);
   console.log(`🚀 Invoking generator...`);
   const vars = {
@@ -126,7 +125,7 @@ function createPluginProject(options) {
     ]);
 
     destPath = path.join.apply(null, [
-      options.npmName,
+      savePath + "/" + options.npmName,
       ...destPath.split("/")
     ]);
 
@@ -135,6 +134,7 @@ function createPluginProject(options) {
   });
 
   // Change current dir
+  process.chdir(savePath);
   process.chdir(`./${vars.npmName}`);
 
   console.log(`🗃 Initializing git repository...`);
