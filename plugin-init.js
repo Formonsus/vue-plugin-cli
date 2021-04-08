@@ -22,7 +22,6 @@ function onCancel() {
 }
 
 async function checkForCliToolUpdate() {
-  console.log(__dirname);
   let update = null;
   try {
     update = await updateCheck(pkg);
