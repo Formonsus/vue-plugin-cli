@@ -1,12 +1,11 @@
 #! /usr/bin/env node
-
 const path = require("path");
 const fs = require("fs");
 const ejs = require("ejs");
 const prompts = require("prompts");
 const chalk = require("chalk");
 const updateCheck = require("update-check");
-
+const shelljs = require("shelljs");
 
 const pkg = require("./package");
 
@@ -18,11 +17,12 @@ const result = {
 
 // Exit the process.
 function onCancel() {
-  console.log("User canceled plugin-init script. Byee 👋");
+  console.log("Byee 👋");
   process.exit();
 }
 
 async function checkForCliToolUpdate() {
+  console.log(__dirname);
   let update = null;
   try {
     update = await updateCheck(pkg);
@@ -65,6 +65,8 @@ async function getName() {
 }
 
 function createPluginProject(options) {
+  console.log(`✨ Creating project in ${chalk.yellow(__dirname + "/" + options.npmName)}`);
+  console.log(`🚀 Invoking generator...`);
   const vars = {
     npmName: options.npmName
   };
@@ -131,16 +133,21 @@ function createPluginProject(options) {
     fs.writeFileSync(destPath, ejs.render(fs.readFileSync(srcPath).toString(), vars));
   });
 
-  console.log(`
-    Init is completed, your files have been generated and saved in the directory [${vars.npmName}] you specified above.
-    Next steps to start plugin for development:
+  // Change current dir
+  process.chdir(`./${vars.npmName}`);
 
-    1. cd ${vars.npmName}
-    2. yarn
-    3. yarn serve
+  console.log(`🗃 Initializing git repository...`);
+  shelljs.exec("git init");
+  console.log(`📦 Installing additional dependencies. This might take a while...`);
+  shelljs.exec("yarn");
 
-    When you're ready, run "yarn build" to generate the redistributable version of your plugin.
-  `);
+  console.log(`\n`);
+  console.log(`🎉 Successfully created project ${chalk.yellow(vars.npmName)}.`);
+  console.log(`👉 Get started with the following commands:`)
+  console.log(`\n`);
+  console.log(` ${chalk.gray("$")} ${chalk.cyan("cd " + vars.npmName)}`);
+  console.log(` ${chalk.gray("$")} ${chalk.cyan("yarn serve")}`);
+  console.log(`\n`);
 }
 
 const ensureDirectoryExists = (filePath) => {

@@ -38,6 +38,7 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "prompts": "^2.4.1",
+    "shelljs": "^0.8.4",
     "update-check": "^1.5.4"
   },
   "devDependencies": {
