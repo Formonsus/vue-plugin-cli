@@ -1,3 +1,9 @@
+#### 1.1.2 (2021-04-08)
+
+##### Documentation Changes
+
+*  description in readme ([aaf7ebdb](https://github.com/Formonsus/vue-plugin-cli/commit/aaf7ebdbca518648b4d3294ee0e8e03a630950c8))
+
 #### 1.1.1 (2021-04-08)
 
 ##### Build System / Dependencies
