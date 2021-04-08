@@ -26,6 +26,20 @@ async function checkForCliToolUpdate() {
   let update = null;
   try {
     update = await updateCheck(pkg);
+
+    const current = pkg.version;
+    const latest = update.latest;
+
+    if (current !== latest) {
+      console.log(chalk.magenta(`Vue Plugin CLI v${current}`));
+      console.log(`
+      ┌──────────────────────────────────────────┐
+      │                                          │
+      │   New version available ${chalk.magenta(current)} → ${chalk.green(latest)}   │
+      │                                          │
+      └──────────────────────────────────────────┘
+      `)
+    }
   } catch (err) {
     const errorMessage = `${pkg.name} failed to check for self update -->`;
     console.error(`${chalk.black.bgRed(errorMessage)}${err}`);
