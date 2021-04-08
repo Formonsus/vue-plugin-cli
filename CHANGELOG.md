@@ -1,3 +1,10 @@
+## 1.0.0 (2021-04-08)
+
+##### Refactors
+
+*  remove typescript support ([125659b4](https://github.com/Formonsus/vue-plugin-cli/commit/125659b421e56e78d0050a0b22bddaeb9197673d))
+*  code style ([ced79b9c](https://github.com/Formonsus/vue-plugin-cli/commit/ced79b9c12c758a80277266be19ab79de0d5062c))
+
 ### 0.8.0 (2021-04-07)
 
 ##### Refactors
