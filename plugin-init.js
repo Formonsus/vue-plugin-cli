@@ -65,8 +65,8 @@ async function getName() {
 
 function createPluginProject(options) {
   const pwd = shelljs.pwd()
-  const path = pwd.stdout;
-  console.log(`✨ Creating project in ${chalk.yellow(path + "/" + options.npmName)}`);
+  const savePath = pwd.stdout;
+  console.log(`✨ Creating project in ${chalk.yellow(savePath + "/" + options.npmName)}`);
   console.log(`🚀 Invoking generator...`);
   const vars = {
     npmName: options.npmName
