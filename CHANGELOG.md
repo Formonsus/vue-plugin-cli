@@ -1,3 +1,9 @@
+#### 1.1.5 (2021-04-08)
+
+##### Bug Fixes
+
+*  conflicting variable name ([f8638d00](https://github.com/Formonsus/vue-plugin-cli/commit/f8638d00ef179e86941d506fab1a1a758282eaf9))
+
 #### 1.1.4 (2021-04-08)
 
 ##### Bug Fixes
