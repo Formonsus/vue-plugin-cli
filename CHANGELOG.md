@@ -1,3 +1,14 @@
+#### 1.1.7 (2021-04-09)
+
+##### Chores
+
+*  wording ([f60b4d48](https://github.com/Formonsus/vue-plugin-cli/commit/f60b4d48b43a88cfc14ff4a942c8792df955f6a4))
+
+##### Documentation Changes
+
+*  add attribution secrion ([5be75ebb](https://github.com/Formonsus/vue-plugin-cli/commit/5be75ebb16d7f81b441fda50a772b7639fb676ac))
+*  update readme ([e761bdf9](https://github.com/Formonsus/vue-plugin-cli/commit/e761bdf95324492ecf6da71fac7e051a6b8db768))
+
 #### 1.1.6 (2021-04-08)
 
 ##### Bug Fixes
