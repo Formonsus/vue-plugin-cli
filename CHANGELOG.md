@@ -1,3 +1,9 @@
+#### 1.1.8 (2021-04-09)
+
+##### Bug Fixes
+
+*  check if response from updateCheck is not null ([ce2d7593](https://github.com/Formonsus/vue-plugin-cli/commit/ce2d7593a445cc5c4875821cb702db8c9156dca1))
+
 #### 1.1.7 (2021-04-09)
 
 ##### Chores
