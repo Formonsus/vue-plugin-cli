@@ -49,3 +49,7 @@ cd path/to/plugin
 # Run build process
 yarn build
 ```
+
+## Attribution
+
+This CLI tool is inspired by: [vue-sfc-rollup](https://github.com/team-innovation/vue-sfc-rollup)
