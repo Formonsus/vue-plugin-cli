@@ -24,20 +24,25 @@ function onCancel() {
 async function checkForCliToolUpdate() {
   let update = null;
   try {
+    const current = pkg.version;
+    console.log(chalk.magenta(`Vue Plugin CLI v${current}`));
+
     update = await updateCheck(pkg);
 
-    const current = pkg.version;
-    const latest = update.latest;
+    if (update) {
 
-    if (current !== latest) {
-      console.log(chalk.magenta(`Vue Plugin CLI v${current}`));
-      console.log(`
+      const latest = update.latest;
+
+      if (current !== latest) {
+
+        console.log(`
       ┌──────────────────────────────────────────┐
       │                                          │
       │   New version available ${chalk.magenta(current)} → ${chalk.green(latest)}   │
       │                                          │
       └──────────────────────────────────────────┘
       `)
+      }
     }
   } catch (err) {
     const errorMessage = `${pkg.name} failed to check for self update -->`;
@@ -54,8 +59,7 @@ async function getName() {
   const question = {
     type: "text",
     name: "npmName",
-    message: "What is the name of your Vue plugin?",
-    initial: "my-plugin"
+    message: "What is the name of your Vue plugin?"
   };
   const response = await prompts(question, {
     onCancel: onCancel
