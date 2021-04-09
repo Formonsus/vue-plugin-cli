@@ -22,7 +22,7 @@ yarn plugin-init
 ```
 
 The wizzard will then prompt you for the following:
-  - name: This is how your plugin will be named. Wizzard will use your current directory and create a new folder with the name you entered for your plugin.
+  - name: This is how your plugin will be named. Wizzard will use your current directory to create a new folder with the name you entered for your plugin.
 
 
 ## Developing your Plugin
