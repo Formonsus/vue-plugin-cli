@@ -1,3 +1,9 @@
+#### 1.1.9 (2021-04-09)
+
+##### Bug Fixes
+
+*  move ejs to dependencies instead of devDependencies ([d198db50](https://github.com/Formonsus/vue-plugin-cli/commit/d198db5015a5fb4c82642df40870f09e667c4a4e))
+
 #### 1.1.8 (2021-04-09)
 
 ##### Bug Fixes
