@@ -86,7 +86,7 @@ function createPluginProject(options) {
       ".browserslistrc",
       "babel.config.js",
       "src/components/counter.vue",
-      "src/entry.esm.js",
+      "src/index.js",
       "src/entry.js",
       "dev/serve.js",
       { "plugin-package.json": "package.json" }

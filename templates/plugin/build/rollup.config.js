@@ -86,7 +86,7 @@ const buildFormats = [];
 if (!argv.format || argv.format === 'es') {
   const esConfig = {
     ...baseConfig,
-    input: 'src/entry.esm.js',
+    input: 'src/index.js',
     external,
     output: {
       dir: 'dist',

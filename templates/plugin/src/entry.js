@@ -1,3 +1,3 @@
-import * as installPlugin from "@/entry.esm";
+import * as installPlugin from "@/index.js";
 
 export default installPlugin;
