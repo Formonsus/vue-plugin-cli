@@ -68,7 +68,11 @@ async function getName() {
 }
 
 function createPluginProject(options) {
-  const savePath = process.env.INIT_CWD;
+  let savePath = process.env.INIT_CWD;
+
+  if (savePath === undefined) {
+    savePath = "."
+  }
   console.log(`✨ Creating project in ${chalk.yellow(savePath + "/" + options.npmName)}`);
   console.log(`🚀 Invoking generator...`);
   const vars = {
