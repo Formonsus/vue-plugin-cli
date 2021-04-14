@@ -115,5 +115,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+.DS_Store
+
 # my-plugin folder for local testing of CLI
 my-plugin

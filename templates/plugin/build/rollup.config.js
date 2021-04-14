@@ -89,7 +89,7 @@ if (!argv.format || argv.format === 'es') {
     input: 'src/entry.esm.js',
     external,
     output: {
-      file: 'dist/<%-npmName%>.esm.js',
+      dir: 'dist',
       format: 'esm',
       exports: 'named',
     },
