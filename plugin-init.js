@@ -145,8 +145,6 @@ function createPluginProject(options) {
   process.chdir(savePath);
   process.chdir(`./${vars.npmName}`);
 
-  console.log(`🗃 Initializing git repository...`);
-  shelljs.exec("git init");
   console.log(`📦 Installing additional dependencies. This might take a while...`);
   shelljs.exec("yarn");
 
