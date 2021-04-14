@@ -124,7 +124,7 @@ if (!argv.format || argv.format === 'iife') {
       compact: true,
       file: 'dist/<%-npmName%>.min.js',
       format: 'iife',
-      name: '<%-npmName%>',
+      name: '<%-pluginName%>',
       exports: 'auto',
       inlineDynamicImports: true,
       globals,

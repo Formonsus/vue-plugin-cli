@@ -59,7 +59,10 @@ async function getName() {
   const question = {
     type: "text",
     name: "npmName",
-    message: "What is the name of your Vue plugin?"
+    message: "What is the name of your Vue plugin?",
+    validate(val) {
+      return val !== "";
+    }
   };
   const response = await prompts(question, {
     onCancel: onCancel
@@ -76,7 +79,8 @@ function createPluginProject(options) {
   console.log(`✨ Creating project in ${chalk.yellow(savePath + "/" + options.npmName)}`);
   console.log(`🚀 Invoking generator...`);
   const vars = {
-    npmName: options.npmName
+    npmName: options.npmName,
+    pluginName: pascalify(options.npmName)
   };
 
   const files = {
@@ -155,6 +159,11 @@ function createPluginProject(options) {
   console.log(` ${chalk.gray("$")} ${chalk.cyan("cd " + vars.npmName)}`);
   console.log(` ${chalk.gray("$")} ${chalk.cyan("yarn serve")}`);
   console.log(`\n`);
+}
+
+const pascalify = (str) => {
+  const camelized = str.replace(/-([a-z])/g, (c) => c[1].toUpperCase());
+  return camelized.charAt(0).toUpperCase() + camelized.slice(1);
 }
 
 const ensureDirectoryExists = (filePath) => {
