@@ -2,6 +2,6 @@ export default [
   {
     path: "counter",
     name: "counter",
-    component: () => import("./views/plugin.vue")
+    component: () => import(/* webpackChunkName: "counter" */"./views/plugin.vue")
   }
 ]
