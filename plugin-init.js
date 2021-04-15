@@ -88,6 +88,7 @@ function createPluginProject(options) {
       "build/rollup.config.js",
       "dev/serve.vue",
       ".browserslistrc",
+      ".editorconfig",
       "babel.config.js",
       "src/components/counter.vue",
       "src/index.js",
