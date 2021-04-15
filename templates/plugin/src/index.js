@@ -1,12 +1,12 @@
 import counter from "./state/counter";
 import routes from "./router/routes";
-import home from "./router/views/home.vue";
+import PluginLayout from "./router/layouts/PluginLayout.vue";
 
 const install = (app, options) => {
 
   const topLevelPluginRoute = {
     path: options.routePrefix,
-    component: home,
+    component: PluginLayout,
     children: routes
   }
 

@@ -92,29 +92,21 @@ function createPluginProject(options) {
       ".eslintrc.js",
       ".prettierrc",
       "jsconfig.json",
-      "jest.config.js",
-      "cypress.json",
       "babel.config.js",
       "vue.config.js",
-      "src/components/counter.vue",
+      "src/components/Counter.vue",
       "src/components/HelloWorld.vue",
-      "tests/unit/HelloWorld.spec.js",
-      "tests/e2e/plugins/index.js",
-      "tests/e2e/specs/test.js",
-      "tests/e2e/support/commands.js",
-      "tests/e2e/support/index.js",
-      "tests/e2e/.eslintrc.js",
       "src/index.js",
       "dev/serve.js",
       { "plugin-package.json": "package.json" }
     ],
     vueRouter: [
       "src/router/routes.js",
+      "src/router/layouts/PluginLayout.vue",
+      "src/router/views/Welcome.vue",
       "dev/router/index.js",
       "dev/router/routes.js",
-      "dev/router/views/home.vue",
-      "src/router/views/home.vue",
-      "src/router/views/plugin.vue"
+      "dev/router/views/Home.vue"
     ],
     vuex: [
       "dev/state/store.js",
@@ -122,6 +114,10 @@ function createPluginProject(options) {
       "src/state/counter/mutations.js",
       "src/state/counter/state.js",
       "src/state/counter/index.js"
+    ],
+    unit: [
+      "tests/unit/HelloWorld.spec.js",
+      "jest.config.js"
     ],
     e2e: [
       "tests/e2e/.eslintrc.js",
@@ -136,7 +132,9 @@ function createPluginProject(options) {
   const fileActions = [
     ...files.common.filter((entry) => entry),
     ...files.vueRouter.filter((entry) => entry),
-    ...files.vuex.filter((entry) => entry)
+    ...files.vuex.filter((entry) => entry),
+    ...files.unit.filter((entry) => entry),
+    ...files.e2e.filter((entry) => entry)
   ];
 
   fileActions.forEach((fileAction) => {

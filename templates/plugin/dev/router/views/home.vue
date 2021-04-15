@@ -28,7 +28,7 @@ export default defineComponent({
       <span @click="hideDeveloperInstructions" class="hideDeveloperInstructions">Hide instructions</span>
     </div>
     <h1>Welcome to <%-npmName%></h1>
-    <router-link to="/plugin/counter">Counter</router-link>
+    <router-link to="/plugin/welcome">Plugin Welcome Page</router-link>
   </div>
 </template>
 
