@@ -105,7 +105,6 @@ function createPluginProject(options) {
       "tests/e2e/support/index.js",
       "tests/e2e/.eslintrc.js",
       "src/index.js",
-      "src/entry.js",
       "dev/serve.js",
       { "plugin-package.json": "package.json" }
     ],
