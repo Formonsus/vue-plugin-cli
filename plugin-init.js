@@ -93,10 +93,17 @@ function createPluginProject(options) {
       ".prettierrc",
       "jsconfig.json",
       "jest.config.js",
+      "cypress.json",
       "babel.config.js",
+      "vue.config.js",
       "src/components/counter.vue",
       "src/components/HelloWorld.vue",
       "tests/unit/HelloWorld.spec.js",
+      "tests/e2e/plugins/index.js",
+      "tests/e2e/specs/test.js",
+      "tests/e2e/support/commands.js",
+      "tests/e2e/support/index.js",
+      "tests/e2e/.eslintrc.js",
       "src/index.js",
       "src/entry.js",
       "dev/serve.js",
@@ -116,6 +123,14 @@ function createPluginProject(options) {
       "src/state/counter/mutations.js",
       "src/state/counter/state.js",
       "src/state/counter/index.js"
+    ],
+    e2e: [
+      "tests/e2e/.eslintrc.js",
+      "tests/e2e/plugins/index.js",
+      "tests/e2e/specs/test.js",
+      "tests/e2e/support/commands.js",
+      "tests/e2e/support/index.js",
+      "cypress.json"
     ]
   }
 
