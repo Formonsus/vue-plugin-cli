@@ -16,6 +16,7 @@
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
+    "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -31,10 +32,12 @@
     "@vue/cli-plugin-babel": "^4.5.10",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "^4.5.10",
     "@vue/compiler-sfc": "^3.0.5",
     "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/test-utils": "^2.0.0-0",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.3",
     "eslint": "^6.7.2",
@@ -50,7 +53,8 @@
     "rollup-plugin-vue": "^6.0.0",
     "vue": "^3.0.5",
     "vue-router": "^4.0.1",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "vue-jest": "^5.0.0-0"
   },
   "peerDependencies": {
     "vue": "^3.0.5",
