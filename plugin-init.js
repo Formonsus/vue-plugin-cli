@@ -89,6 +89,7 @@ function createPluginProject(options) {
       "dev/serve.vue",
       ".browserslistrc",
       ".editorconfig",
+      ".eslintrc.js",
       "babel.config.js",
       "src/components/counter.vue",
       "src/index.js",
