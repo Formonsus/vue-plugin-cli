@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 // Import your plugin from src folder
-import plugin from "../src/entry.esm";
+import plugin from "../src/entry";
 import store from "./state/store";
 import router from "./router/index";
 import Dev from "./serve.vue";
