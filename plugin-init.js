@@ -90,6 +90,7 @@ function createPluginProject(options) {
       ".browserslistrc",
       ".editorconfig",
       ".eslintrc.js",
+      ".prettierrc",
       "jsconfig.json",
       "babel.config.js",
       "src/components/counter.vue",
