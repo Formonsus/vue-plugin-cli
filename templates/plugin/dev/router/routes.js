@@ -4,4 +4,4 @@ export default [
     name: "home",
     component: () => import("./views/Home.vue")
   }
-]
+];

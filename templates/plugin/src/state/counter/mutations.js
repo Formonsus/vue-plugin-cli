@@ -6,4 +6,4 @@ export const mutations = {
   DECREMENT_COUNTER(state) {
     state.counter--;
   }
-}
+};

@@ -7,6 +7,6 @@ const counter = {
   actions,
   mutations,
   state
-}
+};
 
 export default counter;

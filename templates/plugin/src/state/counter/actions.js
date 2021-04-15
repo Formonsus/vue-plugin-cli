@@ -6,4 +6,4 @@ export const actions = {
   decrementCounter({ commit }) {
     commit("DECREMENT_COUNTER");
   }
-}
+};
