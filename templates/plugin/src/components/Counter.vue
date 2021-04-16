@@ -1,8 +1,7 @@
 <script>
-import { defineComponent } from "vue";
 import { mapState, mapActions } from "vuex";
 
-export default defineComponent({
+export default {
   name: "Counter",
   computed: {
     ...mapState("counterModule", ["counter"])
@@ -13,7 +12,7 @@ export default defineComponent({
       decrement: "counterModule/decrementCounter"
     })
   }
-});
+};
 </script>
 
 <template>

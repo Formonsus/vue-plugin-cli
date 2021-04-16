@@ -1,7 +1,7 @@
 <script>
-import { defineComponent, ref } from "vue";
+import { ref } from "vue";
 
-export default defineComponent({
+export default {
   setup() {
     let show = ref(true);
 
@@ -11,7 +11,7 @@ export default defineComponent({
 
     return { show, hideDeveloperInstructions };
   }
-});
+};
 </script>
 
 <template>
