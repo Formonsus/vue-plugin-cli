@@ -1,4 +1,4 @@
-import counter from "./state/counter";
+import counter from "./store/counter";
 import routes from "./router/routes";
 import PluginLayout from "./router/layouts/PluginLayout.vue";
 

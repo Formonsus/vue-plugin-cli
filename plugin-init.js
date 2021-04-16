@@ -84,10 +84,10 @@ function createPluginProject(options) {
     ],
     vuex: [
       "dev/state/store.js",
-      "src/state/counter/actions.js",
-      "src/state/counter/mutations.js",
-      "src/state/counter/state.js",
-      "src/state/counter/index.js",
+      "src/store/counter/actions.js",
+      "src/store/counter/mutations.js",
+      "src/store/counter/state.js",
+      "src/store/counter/index.js",
     ],
     unit: ["tests/unit/HelloWorld.spec.js", "jest.config.js"],
     e2e: [
