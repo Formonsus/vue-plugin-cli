@@ -4,7 +4,6 @@ const fs = require("fs");
 const ejs = require("ejs");
 const prompts = require("prompts");
 const chalk = require("chalk");
-const updateCheck = require("update-check");
 const shelljs = require("shelljs");
 
 const pkg = require("./package");
@@ -21,38 +20,9 @@ function onCancel() {
   process.exit();
 }
 
-async function checkForCliToolUpdate() {
-  let update = null;
-  try {
-    const current = pkg.version;
-    console.log(chalk.magenta(`Vue Plugin CLI v${current}`));
-
-    update = await updateCheck(pkg);
-
-    if (update) {
-      const latest = update.latest;
-
-      if (current !== latest) {
-        console.log(`
-      ┌──────────────────────────────────────────┐
-      │                                          │
-      │   New version available ${chalk.magenta(current)} → ${chalk.green(
-          latest
-        )}   │
-      │                                          │
-      └──────────────────────────────────────────┘
-      `);
-      }
-    }
-  } catch (err) {
-    const errorMessage = `${pkg.name} failed to check for self update -->`;
-    console.error(`${chalk.black.bgRed(errorMessage)}${err}`);
-    update = null;
-  }
-
-  if (update) {
-    result.update = update;
-  }
+async function displayInstalledVersion() {
+  const current = pkg.version;
+  console.log(chalk.magenta(`Vue Plugin CLI v${current}`));
 }
 
 async function getName() {
@@ -203,7 +173,7 @@ const ensureDirectoryExists = (filePath) => {
   return fs.mkdirSync(dirname);
 };
 
-checkForCliToolUpdate()
+displayInstalledVersion()
   .then(getName)
   .then(() => {
     createPluginProject(result);
