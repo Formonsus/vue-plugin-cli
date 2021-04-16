@@ -1,3 +1,48 @@
+## 2.0.0 (2021-04-16)
+
+##### Chores
+
+*  prettier ([dfa7eee7](https://github.com/Formonsus/vue-plugin-cli/commit/dfa7eee7aaf678b1ebda6a24e0947a93112736f6))
+*  increase printWidth for prettierrc ([e3f3e3b9](https://github.com/Formonsus/vue-plugin-cli/commit/e3f3e3b956b4eeadcb35362b38f93ef00a943ba9))
+*  add new component ([15cbb2f1](https://github.com/Formonsus/vue-plugin-cli/commit/15cbb2f1a8720a9348c838a2db9bc0d0a13ea77f))
+*  remove old component ([229e7726](https://github.com/Formonsus/vue-plugin-cli/commit/229e7726e2dacf953f4e71022d1f3c3c77283c07))
+*  typo ([02c48d2c](https://github.com/Formonsus/vue-plugin-cli/commit/02c48d2cebe3303eb5aab3e051d28f2ade873127))
+
+##### New Features
+
+*  preprocess css ([a297c9b0](https://github.com/Formonsus/vue-plugin-cli/commit/a297c9b0ff848c59fd61eb74f60acab6008d4603))
+*  add readme to plugin project ([ceeeef9b](https://github.com/Formonsus/vue-plugin-cli/commit/ceeeef9b5d3f124262e61b7c678fa8ff84c2d7ae))
+*  add sass & sass-loader ([60f36b9e](https://github.com/Formonsus/vue-plugin-cli/commit/60f36b9e87d510e4dacf033bb800dfad36de4b51))
+*  add cypress for e2e testing ([4e1be4ff](https://github.com/Formonsus/vue-plugin-cli/commit/4e1be4ffc3771dceae79db7e5b36eafe899263b2))
+*  add jest for unit testing ([2888254e](https://github.com/Formonsus/vue-plugin-cli/commit/2888254e445b5259206f690d90ac110ee7783e6d))
+*  add .prettierrc and override trailingComma property ([3b78f728](https://github.com/Formonsus/vue-plugin-cli/commit/3b78f728482c730eb75c6e08090843d5b56333da))
+*  add jsconfig to vue-plugin-cli aswell ([dcd9ccb9](https://github.com/Formonsus/vue-plugin-cli/commit/dcd9ccb9ec27b5b7953a61348aed470122ba5597))
+*  add jsconfig for Vetur ([93da6a7c](https://github.com/Formonsus/vue-plugin-cli/commit/93da6a7cc0abaa392b1ca61481107646f3a28844))
+*  introduce eslint and prettier ([2eb3fb1e](https://github.com/Formonsus/vue-plugin-cli/commit/2eb3fb1e60f58a73d2bcf091e7e7d9faa0243b26))
+*  add .editorconfig to plugin template ([6c6a1da5](https://github.com/Formonsus/vue-plugin-cli/commit/6c6a1da5902e28d8e5e9953332af0bc4e0234e4c))
+*  make prompt required and pascalify plugin name ([8017d68b](https://github.com/Formonsus/vue-plugin-cli/commit/8017d68b49e96324e9c399a42d284671829954d5))
+*  add webpackchunkname to code splitted route ([40e295aa](https://github.com/Formonsus/vue-plugin-cli/commit/40e295aa5d91d23785a2a3c5a722edbe7f5a79f2))
+*  start adding support for code splitting and tree shaking ([e389cccf](https://github.com/Formonsus/vue-plugin-cli/commit/e389cccf3e721526ebaed35c5c00f7a0448961ec))
+
+##### Bug Fixes
+
+*  fixing prettier errors ([fe9cb64a](https://github.com/Formonsus/vue-plugin-cli/commit/fe9cb64a3656e1248069d38e1165ad8a0bf28e3e))
+*  incorrect import ([604842ba](https://github.com/Formonsus/vue-plugin-cli/commit/604842baaa06953c73f766ab15d17a11577ced20))
+*  fix root jsoncif for vue-plugin-cli ([4a84e53c](https://github.com/Formonsus/vue-plugin-cli/commit/4a84e53c58d0681089d17d76e5fe6dd55b2f5a1d))
+*  add prettierrc to plugin-init script ([7b4e7765](https://github.com/Formonsus/vue-plugin-cli/commit/7b4e7765c8a84b3db781d532252839eeea588824))
+
+##### Refactors
+
+*  remove defineComponent leftovers ([8200f001](https://github.com/Formonsus/vue-plugin-cli/commit/8200f0011986219b4ecd48f0a84a0b0f5c6e020b))
+*  rename state to store ([2871ba50](https://github.com/Formonsus/vue-plugin-cli/commit/2871ba5041b43f6ad3cc179337e2fa502358de60))
+*  remove update-check ([88764929](https://github.com/Formonsus/vue-plugin-cli/commit/88764929e8f92402df40c257930a1355018b927c))
+*  separate files in different categories ([36cfb7aa](https://github.com/Formonsus/vue-plugin-cli/commit/36cfb7aaac8f7e521400015f97530a5afaf1394e))
+*  code formatting, renaming, conventions, new component, etc ([918b3694](https://github.com/Formonsus/vue-plugin-cli/commit/918b3694a7549bf21ac34f7b1d018fd72b0ef8b4))
+*  drop entry.js file and replace it with single index.js ([76c63c2a](https://github.com/Formonsus/vue-plugin-cli/commit/76c63c2ad4bdd4b0f10b6508670a45d576a72d82))
+*  do not initialize git repo inside plugin folder ([bf505d2f](https://github.com/Formonsus/vue-plugin-cli/commit/bf505d2fd8ef810f4670c31c3470a16d5eb1f997))
+*  rename entry.esm.js to index.js ([8607dc9d](https://github.com/Formonsus/vue-plugin-cli/commit/8607dc9dfce77e201402cb76cdd069bf9e51a480))
+*  drop support for cjs (for now) and inlineDynamicImports for .min builds ([3df88b0f](https://github.com/Formonsus/vue-plugin-cli/commit/3df88b0f4e59dd8e760f751232a1eb18e1b1228d))
+
 #### 1.1.9 (2021-04-09)
 
 ##### Bug Fixes
