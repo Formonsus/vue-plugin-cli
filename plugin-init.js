@@ -94,6 +94,7 @@ function createPluginProject(options) {
       "jsconfig.json",
       "babel.config.js",
       "vue.config.js",
+      "README.md",
       "src/components/Counter.vue",
       "src/components/HelloWorld.vue",
       "src/index.js",
